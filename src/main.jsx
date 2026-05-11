@@ -15,9 +15,12 @@ const store = configureStore({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>
+  <React.StrictMode>
+    <Provider store={store}>
+      {/* Kunci perbaikan rute ada di basename ini */}
+      <BrowserRouter basename="/sts10">
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>
 );
